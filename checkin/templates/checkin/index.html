@@ -1,0 +1,22 @@
+{% extends "checkin/layout.html" %}
+
+
+{% block body %}
+<h1>My Books</h1>
+<div id="container">
+    {% for da in data %}
+        <div>
+            <h4>{{ da.2.title }}</h4>
+            by<p>{{ da.2.author }}</p>
+            <img src= "{{ da.2.image }}"> 
+            {% if da.1 %}
+                <div style="width:fit-content" class="alert alert-warning" role="alert">Checked out on {{ da.0 }}</div>
+                <div style="width:fit-content"  class="alert alert-primary" role="alert">Returned</div>
+            {% else %}
+                <div style="width:fit-content" class="alert alert-warning" role="alert">Please return by {{ da.0 }}</div>
+                <button type="button" value="{{ da.2.title }}" class="btn btn-info checkout_button">Return</button>            
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

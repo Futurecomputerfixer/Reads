@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'checkin/styles.css' %}" rel="stylesheet">
+    <script src="{% static 'checkin/checkin.js' %}"></script>
+    <title>{% block title %}LCS{% endblock %}</title>
+</head>
+
+<body>
+    {% if user.is_authenticated %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"
+            onclick="alert('LCS, short for library checkout system, is a system designed to make book checkouts management easier')">LCS</a>
+        <div>
+            <ul class="navbar-nav mr-lg-5" >
+                <li class="nav-item mr-3">
+                    <button type="button" class="btn btn-outline-primary"><a id="index" class="nav-link" href="{% url 'index' %}">{{ user.username }}</a></button>
+                </li>
+                <li class="nav-item mr-3">
+                    <a class="nav-link" href="{% url 'library' %}">Library</a>
+                </li>
+                <li class="nav-item mr-3">
+                    <a class="nav-link" href="{% url 'logout' %}">Log out</a>
+                  </li>
+            </ul>
+        </div>
+    </nav>
+
+    {% else %}
+    <h1 >Library Checkout System</h1>
+    {% endif %}
+
+
+
+    <div class="body">
+        {% block body %}{% endblock %}
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+{% extends "checkin/layout.html" %}
+
+
+{% block body %}
+<h1>Recommended For You</h1>
+<p style="text-align: center;">Ordered by Popularity(the number of checkouts)</p>
+<div id="container">
+    {% for book in books %}
+        <div>
+            <h4>{{ book.title }}</h4>
+            by<p>{{ book.author }}</p>
+            <img src="{{ book.image }}" >
+            <button type="button" value="{{ book.title }}" class="btn btn-info checkout_button">Check Out</button>            
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

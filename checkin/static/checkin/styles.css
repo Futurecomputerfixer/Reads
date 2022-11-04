@@ -1,0 +1,28 @@
+.login {
+    text-align: center;
+    margin: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#container > div {
+    background-color:bisque;
+    font-size: 20px;
+    margin: 25px;
+    padding: 20px;
+    width: 200px;
+}
+
+img{
+    width: 144px;
+    height: 220px; 
+}
+
+h1{
+    text-align:center;
+}
