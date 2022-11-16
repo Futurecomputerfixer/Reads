@@ -1,5 +1,6 @@
 # Reads 
 # Distinctiveness and Complexity
+This application satisfies the distinctiveness and complexity requirements, it is not a e-commerce website or a social media or wikipedia clone or email service. It is a service to help connect the liberian and the users who wants to check out books from the library.  It is not based on past projects. 
 This web application is used to help people with library book checkouts. 
 At first the libararian needs to store the book information in the database with columns:title, author, how many people have checkouted this book(default to be 0 when the book data is just inserted to the database, and a link to an image )
 When a user(likely a student) log in, two pages will be display: 
@@ -10,7 +11,7 @@ The other one, also the index page, displays all the books the user checked out.
 the Reads folder(the same name as the parent folder) contains the setting files for the django program. The checkin folder contains the files for the web application.  
 Static folder has two files: styles.css to style the html pages, and checkin.js to capture the action of clicking a button and manage the logic of checking out and returning a book using the fetch api and the urls. 
 The templates folder contains the htmls rendered for the web application. login.html and register.html are for the user login/in page. layout.html provides a template for all othe htmls to reduce code.  library.html is to render the library page and index.html is to render the user checkouts page. 
-
+The checkin folder in the application folder, where the url routes are registered in urls.py and views.py is to control the website to render pages.The model.py is to create database for the website. 
 # How to run the program
 First, data of the books need to be input to the database(the web application is to help deal with library and library has lots of books). Next run command python3 manage.py runserver. The website will be served at 
 "http://127.0.0.1:8000/checkin/"
